@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepagePage implements OnInit {
 
+  labels = ['Hot', 'Featured', 'New']
   constructor() { }
 
   ngOnInit() {

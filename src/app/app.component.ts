@@ -13,9 +13,9 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
+      title: 'Home',
+      url: '/homepage',
+      icon: 'home'
     },
     {
       title: 'Outbox',
