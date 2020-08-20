@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomepagePageRoutingModule } from './homepage-routing.module';
 
 import { HomepagePage } from './homepage.page';
@@ -13,7 +13,8 @@ import { HomepagePage } from './homepage.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomepagePageRoutingModule
+    HomepagePageRoutingModule, 
+    NgbModule
   ],
   declarations: [HomepagePage]
 })
