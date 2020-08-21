@@ -8,22 +8,16 @@
 <ion-item> 
   <h1> Welcome to ReadingArk </h1>
 </ion-item>
-  <div></div> 
-  <ion-item>
+
+<ion-item>
   <p> It's a safe haven to read in </p>
 </ion-item>
-  <ion-list> 
-    <ion-item *ngFor="let item of labels"> 
-    <h5> 
-      {{item}}
-    </h5>
-    <ion-item> 
-      <ion-list>
-        <ion-thumbnail>
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-      </ion-thumbnail>
-      </ion-list>
-    </ion-item>
-  </ion-item>
-  </ion-list>
+
+<ion-item-group>
+  <ion-item-divider  *ngFor="let item of labels"> 
+    <h5> {{item}} </h5>
+
+    </ion-item-divider>
+</ion-item-group>
+  <div></div> 
 </ion-content>
