@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-view hide-nav-bar="true">
+<ion-content> 
+  <form [formGroup]="loginForm">
+    <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label>Password</ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="tertiary" type="submit">
+    </ion-button>
+    </form>
 </ion-content>
+</ion-view>
