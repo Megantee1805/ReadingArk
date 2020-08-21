@@ -10,5 +10,9 @@ Ionic start
 Features: 
 
 Write your story 
+
 Sign up as a user 
-Read 
+
+Read them all 
+
+Collaborate
