@@ -1,4 +1,15 @@
 <ion-app>
+
+  <ion-toolbar>
+    <ion-title>support</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="end"> 
+        <ion-button [routerLink]="['/login']"> Login </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
           <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages; let i = index">
