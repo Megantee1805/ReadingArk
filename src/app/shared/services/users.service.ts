@@ -8,11 +8,11 @@ export class UsersService {
 
   constructor(private firebaseAuth : AngularFireAuth) { }
 
-  // signInWithEmail(email: string, password: string): Promise<auth.UserCredential> {
-  //   return this.firebaseAuth.signInWithEmailAndPassword(email, password);
-  // }
+  signInWithEmail(email: string, password: string) {
+    return this.firebaseAuth.signInWithEmailAndPassword(email, password);
+  }
 
-  // signUpWithEmail(email: string, password: string): Promise<auth.UserCredential> {
-  //   return this.angularFire.createUserWithEmailAndPassword(email, password);
-  // }
+  signUpWithEmail(email: string, password: string) {
+    return this.firebaseAuth.createUserWithEmailAndPassword(email, password);
+  }
 }
