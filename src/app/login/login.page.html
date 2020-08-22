@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content> 
+  <form [formGroup]="loginForm">
+    <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label>Password</ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="tertiary" type="submit"> Submit
+    </ion-button>
+
+    <ion-item>
+      <ion-label [routerLink]="['/register']">
+        Don't have an account? 
+      </ion-label>
+    </ion-item>
+    </form>
+</ion-content>

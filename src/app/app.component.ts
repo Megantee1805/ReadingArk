@@ -18,32 +18,31 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
+      title: 'Inbox',
+      url: '/inbox',
+      icon: 'mail'
     },
     {
       title: 'Favorites',
-      url: '/folder/Favorites',
+      url: '/saved-stories',
       icon: 'heart'
     },
     {
       title: 'Archived',
-      url: '/folder/Archived',
+      url: '/archive',
       icon: 'archive'
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
+      title: 'Account',
+      url: '/account',
+      icon: 'person'
     },
     {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
+      title: 'Support',
+      url: '/support',
+      icon: 'help-circle'
     }
-  ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  ]; 
 
   constructor(
     private platform: Platform,

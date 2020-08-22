@@ -4,19 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
 <ion-item> 
   <h1> Welcome to ReadingArk </h1>
 </ion-item>
-  <div></div> 
-  <ion-item>
+
+<ion-item>
   <p> It's a safe haven to read in </p>
 </ion-item>
-<ion-item> 
-  <ion-list *ngFor="let item of labels"> 
-    <ion-label> 
-      {{item}}
-    </ion-label>
-  </ion-list>
-</ion-item>
+
+<ion-item-group>
+  <ion-item-divider  *ngFor="let item of labels"> 
+    <h5> {{item}} </h5>
+
+    </ion-item-divider>
+</ion-item-group>
+  <div></div> 
 </ion-content>
