@@ -8,24 +8,29 @@ import { UsersService } from '../shared/services/users.service';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
+  submitError;
   registerForm: FormGroup 
   constructor(private userService: UsersService) { 
     this.registerForm = new FormGroup({ 
       username: new FormControl(''), 
       email : new FormControl(''), 
-      password: new FormControl('')
+      password: new FormControl(''), 
+      confirmPassword: new FormControl('')
     })
   }
 
+  redirectLoggedUserToProfilePage() { 
+
+  }
 
   signUpWithEmail() {
     this.userService.signUpWithEmail(this.registerForm.value['email'], this.registerForm.value['password'])
     .then(user => {
       // navigate to user profile
-      // this.redirectLoggedUserToProfilePage();
+      this.redirectLoggedUserToProfilePage();
     })
     .catch(error => {
-      // this.submitError = error.message;
+      this.submitError = error.message;
     });
 
   }
