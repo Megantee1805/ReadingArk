@@ -16,7 +16,7 @@
         <ion-input type="email" formControlName="email"></ion-input>
       </ion-item>
       <ion-list>
-        <ion-radio-group>
+        <ion-radio-group formControlName="gender">
           <ion-list-header>
             <ion-label>Gender</ion-label>
           </ion-list-header>
@@ -40,10 +40,10 @@
       </ion-item>
       <ion-item> 
         <ion-label>Confirm Password</ion-label>
-      <ion-input type="confirmPassword" formControlName="password"></ion-input>
+      <ion-input type="password" formControlName="confirmPassword"></ion-input>
       </ion-item>
       
-    <ion-button expand="block" color="tertiary" type="submit"> Register
+    <ion-button expand="block" color="tertiary" type="submit" (click)=add()> Register
     </ion-button>
   </form>
 </ion-content>

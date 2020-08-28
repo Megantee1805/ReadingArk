@@ -15,8 +15,13 @@ export class RegisterPage implements OnInit {
       username: new FormControl(''), 
       email : new FormControl(''), 
       password: new FormControl(''), 
-      confirmPassword: new FormControl('')
+      confirmPassword: new FormControl(''), 
+      gender: new FormControl('')
     })
+  }
+
+  add() { 
+    this.signUpWithEmail()
   }
 
   redirectLoggedUserToProfilePage() { 
