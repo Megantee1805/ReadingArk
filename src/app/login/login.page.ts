@@ -9,10 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  loginForm: FormGroup
-  router: Router; 
+  loginForm: FormGroup; 
   submitError; 
-  constructor(private userService: UsersService) { 
+  constructor(private userService: UsersService, private router: Router) { 
     this.loginForm = new FormGroup({ 
       email: new FormControl(''), 
       password: new FormControl('')
@@ -23,8 +22,9 @@ export class LoginPage implements OnInit {
   }
 
   redirectLoggedUserToProfilePage() { 
-    this.router.navigate(['/homepage'])
+    this.router.navigateByUrl('/homepage')
   }
+  
 
   add() { 
     this.signInWithEmail(this.loginForm.value['email'], this.loginForm.value['password'])
@@ -34,10 +34,12 @@ export class LoginPage implements OnInit {
     this.userService.signInWithEmail(email, password)
     .then(user => {
       // navigate to user profile
+      console.log(user.user)
       this.redirectLoggedUserToProfilePage();
     })
     .catch(error => {
       this.submitError = error.message;
+      console.log(this.submitError)
     });
   }
 
