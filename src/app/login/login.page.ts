@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { UsersService } from '../shared/services/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +9,9 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  loginForm: FormGroup
-  constructor() { 
+  loginForm: FormGroup; 
+  submitError; 
+  constructor(private userService: UsersService, private router: Router) { 
     this.loginForm = new FormGroup({ 
       email: new FormControl(''), 
       password: new FormControl('')
@@ -16,6 +19,28 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  redirectLoggedUserToProfilePage() { 
+    this.router.navigateByUrl('/homepage')
+  }
+  
+
+  add() { 
+    this.signInWithEmail(this.loginForm.value['email'], this.loginForm.value['password'])
+  }
+
+  signInWithEmail(email: string, password: string) {
+    this.userService.signInWithEmail(email, password)
+    .then(user => {
+      // navigate to user profile
+      console.log(user.user)
+      this.redirectLoggedUserToProfilePage();
+    })
+    .catch(error => {
+      this.submitError = error.message;
+      console.log(this.submitError)
+    });
   }
 
 }
