@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-homepage',
@@ -8,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 export class HomepagePage implements OnInit {
 
   labels = ['Hot', 'Featured', 'New']
-  constructor() { }
+  changeLog; 
+  constructor(private storage : Storage) { }
 
   ngOnInit() {
   }
+
+  getUser() { 
+    this.storage.get('email').then((val) => {
+      console.log('Your email is', val);
+    });
+  }
+
+  ngAfterContentInit() { 
+    this.getUser()
+  }
+
+  // ngAf() {
+  //   // viewChild is updated after the view has been checked
+  //   this.getUser()
+  // }
+
+ 
 
 }
