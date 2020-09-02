@@ -36,6 +36,7 @@ export class LoginPage implements OnInit {
     .then(user => {
       // navigate to user profile
       this.storage.set('email', email)
+      this.storage.set('uid', user.user.uid)
       this.redirectLoggedUserToProfilePage();
     })
     .catch(error => {

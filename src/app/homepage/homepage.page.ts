@@ -19,6 +19,9 @@ export class HomepagePage implements OnInit {
     this.storage.get('email').then((val) => {
       console.log('Your email is', val);
     });
+    this.storage.get('uid').then((val) => {
+      console.log('Your userId is', val);
+    });
   }
 
   ngAfterContentInit() { 
