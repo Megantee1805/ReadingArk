@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { UsersService } from '../shared/services/users.service';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
   loginForm: FormGroup; 
   submitError; 
-  constructor(private userService: UsersService, private router: Router) { 
+  constructor(private userService: UsersService, private router: Router, private storage: Storage) { 
     this.loginForm = new FormGroup({ 
       email: new FormControl(''), 
       password: new FormControl('')
@@ -34,7 +35,7 @@ export class LoginPage implements OnInit {
     this.userService.signInWithEmail(email, password)
     .then(user => {
       // navigate to user profile
-      console.log(user.user)
+      this.storage.set('email', email)
       this.redirectLoggedUserToProfilePage();
     })
     .catch(error => {

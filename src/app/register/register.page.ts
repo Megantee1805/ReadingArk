@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { UsersService } from '../shared/services/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ import { UsersService } from '../shared/services/users.service';
 export class RegisterPage implements OnInit {
   submitError;
   registerForm: FormGroup 
-  constructor(private userService: UsersService) { 
+  constructor(private userService: UsersService, private router: Router) { 
     this.registerForm = new FormGroup({ 
       username: new FormControl(''), 
       email : new FormControl(''), 
@@ -25,7 +26,7 @@ export class RegisterPage implements OnInit {
   }
 
   redirectLoggedUserToProfilePage() { 
-
+    this.router.navigateByUrl('/login')
   }
 
   signUpWithEmail() {
